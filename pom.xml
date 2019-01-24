@@ -16,7 +16,6 @@
 
     <properties>
         <java.version>11</java.version>
-        <spring-boot-admin.version>2.1.1</spring-boot-admin.version>
         <telegram.version>4.1</telegram.version>
     </properties>
 
@@ -58,18 +57,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>

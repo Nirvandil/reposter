@@ -32,13 +32,21 @@ public class DefaultBroker {
 
     private String extractText(JsonObject jsonObject) {
         JsonElement object = jsonObject.get("object");
+        String result;
         if (object instanceof JsonObject) {
-            return ((JsonObject) object).get("text").getAsString();
-        }
-        return object.toString();
+            result = ((JsonObject) object).get("text").getAsString();
+        } else
+            result = object.toString();
+        return result + "\n" + buildLink(jsonObject);
     }
 
     private boolean isWallPost(JsonObject jsonObject) {
         return jsonObject.get("type").getAsString().equals("wall_post_new");
+    }
+
+    private String buildLink(JsonObject object) {
+        String groupId = object.get("group_id").getAsString();
+        String id = ((JsonObject) object.get("object")).get("id").getAsString();
+        return "https://vk.com/wall-".concat(groupId).concat("_").concat(id);
     }
 }

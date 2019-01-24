@@ -4,6 +4,7 @@ import cf.nirvandil.reposter.model.TgConfiguration;
 import cf.nirvandil.reposter.service.bots.TgBot;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -14,6 +15,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
  *
  * @author : Vladimir Suharev <vladimir.suharev@gost-group.com>
  */
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class LongPollingTgBot extends TelegramLongPollingBot implements TgBot {
@@ -28,6 +30,7 @@ public class LongPollingTgBot extends TelegramLongPollingBot implements TgBot {
     @Override
     public void onUpdateReceived(Update update) {
         // Ничего он не делает при обновлениях, просто отправляет сообщения когда попросят.
+        log.debug("Received update {}", update);
     }
 
     @Override
