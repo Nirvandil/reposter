@@ -10,4 +10,4 @@
 
 Запуск бота
  
-**java -jar ./path/to/bot.jar --reposter.vk.groupId=... --reposter.vk.key=... --reposter.tg.token=... --reposter.tg.name --reposter.tg.channelId** 
+**java -jar ./path/to/reposter.jar --reposter.vk.groupId=... --reposter.vk.key=... --reposter.tg.token=... --reposter.tg.name=... --reposter.tg.channelId=...** 
